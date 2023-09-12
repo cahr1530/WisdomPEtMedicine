@@ -5,8 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Microsoft.EntityFrameworkCore;
-
 namespace WisdomPetMedicine.DataAccess;
 public class WpmDbContext : DbContext
 {
