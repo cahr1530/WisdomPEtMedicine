@@ -3,12 +3,33 @@
     x:Class="WisdomPEtMedicine.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:WisdomPEtMedicine"
-    Shell.FlyoutBehavior="Disabled">
+    xmlns:views="clr-namespace:WisdomPEtMedicine.Views" 
+    Shell.FlyoutBehavior="Flyout">
+    
 
+  
+    
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
+        Title="Acerca de..."
+        ContentTemplate="{DataTemplate views:AboutPage}"
+        Route="AboutPage" />
+    
+    <FlyoutItem Title="Configuración...">
+        <Tab Title="Totales">
+            <ShellContent
+      Title="PetMedicine"
+      ContentTemplate="{DataTemplate views:MainPage}"
+      Route="MainPage" />
+        </Tab>
+        
+        <Tab Title="Productos">
+            <ShellContent   
+                Title="Productos"
+                ContentTemplate="{DataTemplate views:Productspage}"
+                Route="ProductsPage" />
+        </Tab>
+        <Tab Title="Clientes">
+            
+        </Tab>
+    </FlyoutItem>
 </Shell>
