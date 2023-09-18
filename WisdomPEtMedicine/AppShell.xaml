@@ -18,10 +18,15 @@
         <Tab Title="Totales">
             <ShellContent
       Title="PetMedicine"
-      ContentTemplate="{DataTemplate views:MainPage}"
-      Route="MainPage" />
+      ContentTemplate="{DataTemplate views:TotalsPage}"
+      Route="TotalsPage" />
         </Tab>
-        
+        <Tab Title="Categorias">
+            <ShellContent   
+                Title="Categorias"
+                ContentTemplate="{DataTemplate views:CategoriesPage}"
+                Route="CategoriesPage" />
+        </Tab>
         <Tab Title="Productos">
             <ShellContent   
                 Title="Productos"
@@ -29,7 +34,10 @@
                 Route="ProductsPage" />
         </Tab>
         <Tab Title="Clientes">
-            
+            <ShellContent   
+                Title="Clientes"
+                ContentTemplate="{DataTemplate views:ClientsPage}"
+                Route="ClientsPage" />
         </Tab>
     </FlyoutItem>
 </Shell>
