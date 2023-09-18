@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
-using WisdomPetMedicine.DataAccess;
+using WisdomPEtMedicine.DataAccess;
+using WisdomPEtMedicine.Views;
 
 namespace WisdomPEtMedicine
 {
@@ -19,6 +20,8 @@ namespace WisdomPEtMedicine
             dbContext.Database.EnsureCreated();
             dbContext.Dispose();
 
+            Routing.RegisterRoute(nameof(ProductDetailsPage), typeof(ProductDetailsPage));
+            Routing.RegisterRoute(nameof(VisitDetailsPage), typeof(VisitDetailsPage));
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif

@@ -1,13 +1,13 @@
 ﻿using System.Drawing;
-using WisdomPetMedicine.DataAccess;
+using WisdomPEtMedicine.DataAccess;
 
 namespace WisdomPEtMedicine.Views
 {
-    public partial class MainPage : ContentPage
+    public partial class TotalsPage : ContentPage
     {
 
 
-        public MainPage()
+        public TotalsPage()
         {
             InitializeComponent();
             var dbContext = new WpmDbContext();

@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace WisdomPEtMedicine.DataAccess;
+namespace WisdomPetMedicine.DataAccess;
 public class WpmDbContext : DbContext
 {
     public DbSet<Category> Categories { get; set; }
