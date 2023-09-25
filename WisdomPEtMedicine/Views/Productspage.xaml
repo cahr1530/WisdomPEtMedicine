@@ -8,8 +8,12 @@
         <handlers:ProductSearchHandler Placeholder="Buscar productos..."
                                        DisplayMemberName="Name"
                                        ShowsResults="True"
+                                       ItemTemplate="{StaticResource ProductDataTemplate }"
                                        />
     </Shell.SearchHandler>
-    <VerticalStackLayout x:Name="data"></VerticalStackLayout>
-        
+
+    <CollectionView x:Name="products"
+                SelectionMode="Single"
+                ItemTemplate="{StaticResource ProductDataTemplate}"
+        />
 </ContentPage>
