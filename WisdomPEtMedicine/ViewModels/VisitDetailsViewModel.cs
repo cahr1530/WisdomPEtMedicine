@@ -1,67 +1,27 @@
-﻿using System.Collections.ObjectModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 using WisdomPEtMedicine.DataAccess;
 using WisdomPEtMedicine.Models;
 
 namespace WisdomPEtMedicine.ViewModels;
 
-public class VisitDetailsViewModel : BindableObject
+public partial class VisitDetailsViewModel : ViewModelBase,IQueryAttributable
 {
     public int ClientId { get; set; }
+    [ObservableProperty]
     private ObservableCollection<Product> products;
-    public ObservableCollection<Product> Products
-    {
-        get => products;
-        set
-        {
-            if (products != value)
-            {
-                products = value;
-                RaisePropertyChanged();
-            }
-        }
-    }
-
+  
+    [ObservableProperty]
     private Product selectedProduct;
-    public Product SelectedProduct
-    {
-        get => selectedProduct;
-        set
-        {
-            if (selectedProduct != value)
-            {
-                selectedProduct = value;
-                RaisePropertyChanged();
-            }
-        }
-    }
+ 
+    [ObservableProperty]
     private int quantity;
-    public int Quantity
-    {
-        get => quantity;
-        set
-        {
-            if (quantity != value)
-            {
-                quantity = value;
-                RaisePropertyChanged();
-            }
-        }
-    }
+ 
+    [ObservableProperty]
     private ObservableCollection<Sale> sales = new ObservableCollection<Sale>();
 
-    public ObservableCollection<Sale> Sales
-    {
-        get { return sales; }
-        set
-        {
-            if (sales != value)
-            {
-                sales = value;
-                RaisePropertyChanged();
-            }
-        }
-    }
+   
 
     public ICommand AddCommand { get; set; }
     public VisitDetailsViewModel()
@@ -74,6 +34,11 @@ public class VisitDetailsViewModel : BindableObject
             var sale = new Sale(ClientId, SelectedProduct.Id, Quantity);
             Sales.Add(sale);
         }, () => true);
+    }
+    public void ApplyQueryAttributes(IDictionary<string, object> query)
+    {
+        var clientId = int.Parse(query["id"].ToString());
+       ClientId = clientId;
     }
 }
 

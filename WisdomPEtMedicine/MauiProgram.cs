@@ -1,5 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using WisdomPEtMedicine.DataAccess;
+using WisdomPEtMedicine.Extensions;
+using WisdomPEtMedicine.Services;
+using WisdomPEtMedicine.ViewModels;
 using WisdomPEtMedicine.Views;
 
 namespace WisdomPEtMedicine
@@ -15,13 +18,9 @@ namespace WisdomPEtMedicine
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                });
-            var dbContext = new WpmDbContext();
-            dbContext.Database.EnsureCreated();
-            dbContext.Dispose();
 
-            Routing.RegisterRoute(nameof(ProductDetailsPage), typeof(ProductDetailsPage));
-            Routing.RegisterRoute(nameof(VisitDetailsPage), typeof(VisitDetailsPage));
+                });
+            builder.ConfigureWisdomPetMedicine();
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif

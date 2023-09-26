@@ -1,19 +1,14 @@
 using WisdomPEtMedicine.DataAccess;
+using WisdomPEtMedicine.ViewModels;
 
 namespace WisdomPEtMedicine.Views;
 
 public partial class ClientsPage : ContentPage
 {
-	public ClientsPage()
+	public ClientsPage(ClientsViewModel viewModel)
 	{
 		InitializeComponent();
-        var dbContext = new WpmDbContext();
-        foreach (var client in dbContext.Clients)
-        {
-            data.Children.Add(new Label()
-            {
-                Text = client.Name
-            });
-        }
+       BindingContext = viewModel;
+       
     }
 }

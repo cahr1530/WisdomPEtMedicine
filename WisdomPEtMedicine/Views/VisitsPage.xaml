@@ -5,9 +5,7 @@
              xmlns:views="clr-namespace:WisdomPEtMedicine.Views"
              xmlns:vm="clr-namespace:WisdomPEtMedicine.ViewModels" 
              Title="VisitsPage">
-    <ContentPage.BindingContext>
-        <vm:VisitsViewsModel  RemainingVisits="2" />
-    </ContentPage.BindingContext>
+
 
     <Grid RowDefinitions="Auto,*">
 
