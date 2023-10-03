@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace WisdomPEtMedicine.Models
 {
-    public record Sale(int clientId, int productId, int quantity);
-   
+    public record Sale(int ClientId,
+        int ProductId,
+        string ProductName,
+        decimal ProductPrice,
+        int Quantity, decimal Amount);
+
+
 }

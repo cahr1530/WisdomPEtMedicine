@@ -8,12 +8,12 @@ namespace WisdomPEtMedicine.Services
 {
     public class NavigationService : INavigationService
     {
-        public Task GotoAsync(string route)
+        public Task GoToAsync(string route)
         {
           return   Shell.Current.GoToAsync(route);
         }
 
-        public Task GotoAsync(string route, IDictionary<string, object> parameters)
+        public Task GoToAsync(string route, IDictionary<string, object> parameters)
         {
 
             return Shell.Current.GoToAsync(route,parameters);

@@ -15,7 +15,7 @@ public partial class ClientsViewModel: ViewModelBase
     ObservableCollection<Client> clients;
 
     [ObservableProperty]
-    Client selectedClient;
+    Client selectedClient;  
     public ClientsViewModel()
     {
         var db = new WpmDbContext();

@@ -1,16 +1,13 @@
 using WisdomPEtMedicine.DataAccess;
+using WisdomPEtMedicine.ViewModels;
 
 namespace WisdomPEtMedicine.Views;
 
 public partial class Productspage : ContentPage
 {
-	public Productspage()
+	public Productspage(ProductsViewModel viewModel)
 	{
 		InitializeComponent();
-	var dbContext = new WpmDbContext();
-		products.ItemsSource = dbContext.Products;
-
-		
-        
+BindingContext = viewModel;
 	}
 }

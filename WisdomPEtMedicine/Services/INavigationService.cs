@@ -8,7 +8,7 @@ namespace WisdomPEtMedicine.Services
 {
     public interface INavigationService
     {
-        Task GotoAsync (string uri);
-        Task GotoAsync(string uri, IDictionary<string, object> parameters);
+        Task GoToAsync (string uri);
+        Task GoToAsync(string uri, IDictionary<string, object> parameters);
     }
 }

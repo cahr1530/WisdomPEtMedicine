@@ -37,7 +37,7 @@ public partial class VisitsViewModel : ViewModelBase
         if (e.PropertyName == nameof(SelectedClient))
         {
             var uri = $"{nameof(VisitDetailsPage)}?id={SelectedClient.Id}";
-      await navigationService.GotoAsync(uri);
+      await navigationService.GoToAsync(uri);
         }
     }
 
